@@ -1,0 +1,23 @@
+#include "xiao_encoder.dtsi"
+
+/ {
+    kscan0: kscan0 {
+        compatible = "zmk,kscan-gpio-direct";
+        wakeup-source;
+
+        input-gpios
+            = <&xiao_d 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+            ;
+    };
+};
+
+&physical_layout_xiao_encoder {
+    kscan = <&kscan0>;
+};
+
+&encoder0 {
+    a-gpios = <&xiao_d 6 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&xiao_d 7 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    status = "okay";
+};
+

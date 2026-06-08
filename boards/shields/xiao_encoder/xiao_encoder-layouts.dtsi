@@ -1,0 +1,11 @@
+#include <physical_layouts.dtsi>
+
+/ {
+    physical_layout_xiao_encoder: physical_layout_xiao_encoder {
+        compatible = "zmk,physical-layout";
+        display-name = "xiao-encoder";
+        keys  //                     w   h    x    y     rot    rx    ry
+            = <&key_physical_attrs 100 100  100    0       0   100     0>
+            ;
+    };
+};
